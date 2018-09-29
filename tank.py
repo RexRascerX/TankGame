@@ -13,6 +13,11 @@ def tank:
   def addPrimary(turret):
     if (self.primaries.count() < self.chassis.primary):
       self.primaries.append(turret)
+    else
+      print("Denied Primary " + turret)
   def addSecondary(turret):
     if (self.secondaries.count() < self.chassis.secondary):
       self.secondaries.append(turret)
+    else
+      print("Denied Secondary " + turret)
+
