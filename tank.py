@@ -39,4 +39,5 @@ class tank:
       self.getPowerTotal()
     return self.powerTotal
   def render(self):
-    return imaging.rImage(100,100,0,imaging.rRect(12,12,0xFFFFFF))
+    toren = []
+
