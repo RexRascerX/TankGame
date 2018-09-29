@@ -1,8 +1,9 @@
 # The thing you make when a tank apears
 import tread.py, chassis.py, turrets.py
+import overlord.py
 
 # User defined tanks
-def tank:
+class tank:
   def __init__(self,locomotion, chassis):
     self.locomotion = locomotion
     self.chassis = chassis
@@ -20,4 +21,4 @@ def tank:
       self.secondaries.append(turret)
     else
       print("Denied Secondary " + turret)
-
+  def render()
