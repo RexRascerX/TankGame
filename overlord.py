@@ -53,8 +53,10 @@ def ltick():
 eq=[]
  
 def btick():
- for エ in eq:　
-   
+ for エ in eq:
+   trq=エ.render()
+   for t in trq:
+    rq.append(t)
  print("in battle")
  
 def ctick():
@@ -73,7 +75,12 @@ def tick():
  print("ticking")
  
 def render():
- print("rendering")
+ bg.fill((127,0,0))
+ for ロ in rq:
+  ロ.render(bg)
+ bg=bg.convert()
+ scr.blit(bg,(0,0))
+ print("rendered")
 
 while mainloop:
  milliseconds = clk.tick()
