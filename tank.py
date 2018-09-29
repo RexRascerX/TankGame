@@ -39,4 +39,4 @@ class tank:
       getPowerTotal()
     return powerTotal
   def render():
-    return [2, 5, 0xFFFFFF]
+    return [10, 10, 0, [2, 5, 0xFFFFFF]]
