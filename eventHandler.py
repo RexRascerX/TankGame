@@ -1,6 +1,6 @@
 import pygame, sys
 
-class events:
+class eventOV:
   def __init__(self, pygame):
     self.pg = pygame
     self.queue = []
