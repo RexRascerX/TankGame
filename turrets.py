@@ -6,9 +6,9 @@ class turret:
         self.armorBonus = armorBonus
     def __str__(self):
         return "Turret"
-    def action():
-        -energyConsumption
-    def type():
+    def action(self):
+        -self.energyConsumption
+    def type(self):
         return 0;
 
 class passiveTurret(turret):
@@ -16,9 +16,9 @@ class passiveTurret(turret):
         super().__init__(sightLength, turningSpeed, energyConsumption, armorBonus)
     def __str__(self):
         return "Passive Turret"
-    def type():
+    def type(self):
         return 1;
-    def energy():
+    def energy(self):
       pass
 
 class aggressiveTurret(turret):
@@ -26,7 +26,7 @@ class aggressiveTurret(turret):
         super().__init__(sightLength, turningSpeed, energyConsumption, armorBonus)
     def __str__(self):
         return "Aggressive Turret"
-    def type():
+    def type(self):
         return -1;
 
 class matter(aggressiveTurret):
