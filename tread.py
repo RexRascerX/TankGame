@@ -9,4 +9,8 @@ def locomotion:
     return "Locomotion"
 
 
-def wheels:
+def wheels(locomotion):
+  def __init__(self):
+    super().__init__(10, 1, 2)
+  def __str__(self):
+    return "Wheel"
