@@ -20,6 +20,8 @@ class passiveTurret(turret):
         return 1;
     def energy(self):
       pass
+    def matter(self):
+      pass
 
 class aggressiveTurret(turret):
     def __init__(self, sightLength, turningSpeed, energyConsumption, armorBonus):
