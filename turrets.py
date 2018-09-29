@@ -63,7 +63,7 @@ class GaussRifle(matter):
     def __str__(self):
         return "Gauss Rifle"
     def render(self):
-      
+        pass
 
 class Type67(matter):
     def __init__(self, level):
