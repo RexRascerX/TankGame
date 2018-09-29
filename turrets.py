@@ -64,7 +64,6 @@ class GaussRifle(matter):
         return "Gauss Rifle"
     def render(self, x, y, a):
       return imaging.rImage(x,y,a,imaging.rRect(8,19,0x10ff10))
-      
 
 class Type67(matter):
     def __init__(self, level):
