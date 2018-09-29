@@ -1,5 +1,5 @@
 #Initialization stuff
-import sys,pygame,mouse
+import sys,pygame,mouse,copy
 pygame.init()
 scr=pygame.display.set_mode((640,480))
 bg=pygame.Surface(scr.get_size())
@@ -22,24 +22,43 @@ rq=[]
 
 #Images that can be tossed into the render queue any time
 class rImage:
- def __init__(self,x,y,a,spr):
+ def __init__(self,x,y,a,rect):
   this.x=x#x coord
   this.y=y#y coord
   this.a=a#angle
-  this.spr=spr#sprite
+  this.rect=rect#sprite
+  
+ def render(self,frame):
+  this.rect.blit(this,frame,(this.x,this.y),a)
 
 #Polygons in need of rendering
 class rRect:
  def __init__(self,w,h,c):
-  serf=Surface((h,w))
-  serf.fill(0x00FF00)
-  serf.fill(0x000000,Rect(2,2,w-4,h-4))
+  this.serf=Surface((h,w))
+  this.serf.fill(c)
+  this.serf.fill(0x000000,Rect(2,2,w-4,h-4))
+  
+ def blit(self,target,pos,angle):
+  赤=copy.copy(serf)
+  rotate(赤,angle)
+  赤.blit(target,pos)
 
 def ttick():
- print("Currently in the title menu")
+ print("title")
  
 def ltick():
  print("level select")
+ 
+#Battle mode stuff
+eq=[]
+ 
+def btick():
+ for エ in eq:　
+   
+ print("in battle")
+ 
+def ctick():
+ print("customization")
 
 # The structural loops
 def tick():
@@ -47,6 +66,10 @@ def tick():
   ttick()
  if(gmode==gmodes[1]):
   ltick()
+ if(gmode==gmodes[2]):
+  btick()
+ if(gmode==gmodes[3]):
+  ctick()
  print("ticking")
  
 def render():
@@ -63,7 +86,7 @@ while mainloop:
   elif event.type == pygame.KEYDOWN:
    # User presses ESCAPE-Key
    if event.key == pygame.K_ESCAPE:
-    mainloop = False
+    gmode=gmodes[0]
  # Print framerate and playtime in titlebar.
  #Update Pygame display.
  pygame.display.flip()
