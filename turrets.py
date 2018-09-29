@@ -71,3 +71,14 @@ def ElectronNeedler(energy):
     def __str__(self):
         return "Electron Needler"
 
+def ProtonBlaster(energy):
+    def __init__(self, level):
+        super().__init(3+(level/4), 8+(level/2), 0.4+(level/3), 7)
+    def __str__(self):
+        return "Proton Blaster"
+
+def NeutronNeuterer(energy):
+    def __init__(self, level):
+        super().__init(6+level, 3+(level/2), 5+level, 5)
+    def __str__(self):
+        return "Neutron Neuterer"
