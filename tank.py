@@ -39,4 +39,4 @@ class tank:
       getPowerTotal()
     return powerTotal
   def render(self):
-    return imaging.rImage(10,10,0,imaging.rRect(5,12,0xFFFFFF))
+    return imaging.rImage(100,100,0,imaging.rRect(12,12,0xFFFFFF))

@@ -3,10 +3,6 @@ import sys,pygame,imaging,copy
 import tank,tread,chassis,turrets
 pygame.init()
 scr=pygame.display.set_mode((640,480))
-bg=pygame.Surface(scr.get_size())
-bg.fill((127,0,0))
-bg=bg.convert()
-scr.blit(bg,(0,0))
 clk = pygame.time.Clock()
 mainloop=True
 pygame.display.set_caption("Zoned For War")
@@ -32,9 +28,9 @@ eq=[]
  
 def btick():
  for エ in eq:
-   trq=エ.render()
-   for t in trq:
-    rq.append(t)
+   #trq=エ.render()
+   #for t in trq:
+   rq.append(エ.render())
  print("in battle")
  
 def ctick():
@@ -52,18 +48,19 @@ def tick():
   ctick()
  print("ticking")
  
-def render():
- bg.fill((127,0,0))
+def render(scr):
+ bg=pygame.Surface(scr.get_size())
+ bg.fill(0x0)
+ #btick()
  for ロ in rq:
   ロ.render(bg)
  bg=bg.convert()
  scr.blit(bg,(0,0))
  pygame.display.flip()
- print("rendered")
 
 #Adding Tank to test
 Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0))
-eq.append(Tester.render())
+rq.append(Tester.render())
 
 while mainloop:
  milliseconds = clk.tick()
@@ -78,5 +75,5 @@ while mainloop:
    if event.key == pygame.K_ESCAPE:
     gmode=gmodes[0]
  # Print framerate and playtime in titlebar.
- render()
+ render(scr)
  #Update Pygame display.
