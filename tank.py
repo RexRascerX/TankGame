@@ -38,5 +38,5 @@ class tank:
     if powerTotal == -1:
       getPowerTotal()
     return powerTotal
-  def render():
-    return rImage(10,10,0,rRect(5,12,0xFFFFFF))
+  def render(self):
+    return imaging.rImage(10,10,0,imaging.rRect(5,12,0xFFFFFF))

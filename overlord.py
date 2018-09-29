@@ -58,10 +58,12 @@ def render():
   ロ.render(bg)
  bg=bg.convert()
  scr.blit(bg,(0,0))
+ pygame.display.flip()
  print("rendered")
 
 #Adding Tank to test
 Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0))
+eq.append(Tester.render())
 
 while mainloop:
  milliseconds = clk.tick()
@@ -76,5 +78,5 @@ while mainloop:
    if event.key == pygame.K_ESCAPE:
     gmode=gmodes[0]
  # Print framerate and playtime in titlebar.
+ render()
  #Update Pygame display.
- pygame.display.flip()
