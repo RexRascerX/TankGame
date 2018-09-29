@@ -1,6 +1,8 @@
 print("Gotta have that Cactus Swag")
-import sys,pygame
+import sys,pygame,mouse
 pygame.init()
+
+#Define some overarching code
 
 scr=pygame.display.set_mode((640,480))
 bg=pygame.Surface(scr.get_size())
@@ -10,9 +12,11 @@ scr.blit(bg,(0,0))
 clk = pygame.time.Clock()
 mainloop=True
 pygame.display.set_caption("Zoned For War")
+playtime=0
 
 while mainloop:
  milliseconds = clk.tick()
+ playtime+=milliseconds/1000.0
  for event in pygame.event.get():
   # User presses QUIT-button.
   if event.type == pygame.QUIT:
