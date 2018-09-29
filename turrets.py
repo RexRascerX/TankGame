@@ -62,7 +62,8 @@ class GaussRifle(matter):
         super().__init__(10+level, 2, 1+(level/3), 3, 3)
     def __str__(self):
         return "Gauss Rifle"
-    def render(self):
+    def render(self, x, y, a):
+      return imaging.rImage(x,y,a,imaging.rRect(8,19,0x10ff10))
       
 
 class Type67(matter):
@@ -70,28 +71,38 @@ class Type67(matter):
         super().__init__(3+(level/4), 8+(level/2), 0.1+(level/5), 7, 1)
     def __str__(self):
         return "Type 67"
+    def render(self, x, y, a):
+      return imaging.rImage(x,y,a,imaging.rRect(8,14,0x10ff10))
         
 class BigBertha(matter):
     def __init__(self, level):
         super().__init__(6+level, 3+(level/2), 3+(level/2), 5, 5)
     def __str__(self):
         return "Big Bertha"
+    def render(self, x, y, a):
+      return imaging.rImage(x,y,a,imaging.rRect(8,16,0x10ff10))
     
 class ElectronNeedler(energy):
     def __init__(self, level):
         super().__init__(10+level, 2, 5+(level/2), 3)
     def __str__(self):
         return "Electron Needler"
+    def render(self, x, y, a):
+      return imaging.rImage(x,y,a,imaging.rRect(8,19,0xff00ff))
     
 class ProtonBlaster(energy):
     def __init__(self, level):
         super().__init__(3+(level/4), 8+(level/2), 0.4+(level/3), 7)
     def __str__(self):
         return "Proton Blaster"
+    def render(self, x, y, a):
+      return imaging.rImage(x,y,a,imaging.rRect(8,14,0xff00ff))
     
 class NeutronNeuterer(energy):
     def __init__(self, level):
         super().__init__(6+level, 3+(level/2), 5+level, 5)
     def __str__(self):
         return "Neutron Neuterer"
+    def render(self, x, y, a):
+      return imaging.rImage(x,y,a,imaging.rRect(8,16,0xff00ff))
     
