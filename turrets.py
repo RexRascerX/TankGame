@@ -18,6 +18,8 @@ class passiveTurret(turret):
         return "Passive Turret"
     def type():
         return 1;
+    def energy():
+      pass
 
 class aggressiveTurret(turret):
     def __init__(self, sightLength, turningSpeed, energyConsumption, armorBonus):
