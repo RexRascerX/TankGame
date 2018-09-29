@@ -1,5 +1,6 @@
 # Class for transportation
 
+# This is the inheritance class, please make the types below this class.
 def locomotion:
   def __init__(self, speed, powerCost, armorBonus, turnSpeed) :
     self.speed = speed
@@ -9,7 +10,8 @@ def locomotion:
   def __str__(self):
     return "Locomotion"
 
-
+# Basic mode of transportaion.
+# Fast, but not strong.
 def wheels(locomotion):
   def __init__(self, level):
     super().__init__(10*level, 1*level, 2*level, 2*level)
@@ -18,6 +20,8 @@ def wheels(locomotion):
   def armorBonus():
     return 1
 
+# Slightly advanced mode of transportation.
+# Slow, but well armored.
 def track(locomation):
   def __init__(self, level):
     super().__init__(1*level, 2*level, 6*level, 4*level)
