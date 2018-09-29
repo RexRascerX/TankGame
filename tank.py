@@ -7,6 +7,8 @@ class tank:
   def __init__(self,locomotion, chassis):
     self.locomotion = locomotion
     self.chassis = chassis
+    self.powerTotal = -1
+    self.powerLevel = 0
     self.primaries = []
     self.secondaries = []
   def __str__(self):
@@ -21,4 +23,20 @@ class tank:
       self.secondaries.append(turret)
     else
       print("Denied Secondary " + turret)
-  def render()
+  def getPowerTotal():
+    powerTotal = chassis.energyCapacity
+    for x in primaries:
+      if x.type() == 1:
+        if x.energy() != -1
+          powerTotal += x.energy()
+    for x in secondaries:
+      if x.type() == 1:
+        if x.energy() != -1
+          powerTotal += x.energy()
+    powerLevel = powerTotal
+  def getPowerLevel():
+    if powerTotal == -1
+      getPowerTotal()
+    return powerTotal
+  def render():
+    return [2, 5, 0xFFFFFF]
