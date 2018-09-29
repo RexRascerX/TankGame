@@ -9,6 +9,8 @@ class locomotion:
     self.turnSpeed = turnSpeed
   def __str__(self):
     return "Locomotion"
+  def render(self, x, y, a):
+    pass
 
 # Basic mode of transportaion.
 # Fast, but not strong.
@@ -17,6 +19,12 @@ class wheels(locomotion):
     super().__init__(10*level, 1*level, 2*level, 2*level)
   def __str__(self):
     return "Wheel"
+  def render(self, x, y, a, shiftx, shifty):
+    toren = [imaging.rImage(x+shiftx,y+shifty,a,imaging.rRect(8,14,0x111111))]
+    toren.append(imaging.rImage(x+shiftx,y-shiftx,a,imaging.rRect(8,14,0x111111)))
+    toren.append(imaging.rImage(x-shiftx,y-shiftx,a,imaging.rRect(8,14,0x111111)))
+    toren.append(imaging.rImage(x-shiftx,y+shiftx,a,imaging.rRect(8,14,0x111111)))
+    return toren
 
 # Slightly advanced mode of transportation.
 # Slow, but well armored.
@@ -25,3 +33,7 @@ class track(locomotion):
     super().__init__(1*level, 2*level, 6*level, 4*level)
   def __str__(self):
     return "Track"
+  def render(self, x, y, a, shiftx, shifty):
+    toren = [imaging.rImage(x+shiftx,y+shifty,a,imaging.rRect(8,14,0x111111))]
+    toren.append(imaging.rImage(x-shiftx,y-shiftx,a,imaging.rRect(8,14,0x111111)))
+    return toren
