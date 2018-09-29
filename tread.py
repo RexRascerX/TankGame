@@ -17,8 +17,6 @@ class wheels(locomotion):
     super().__init__(10*level, 1*level, 2*level, 2*level)
   def __str__(self):
     return "Wheel"
-  def armorBonus():
-    return 1
 
 # Slightly advanced mode of transportation.
 # Slow, but well armored.
