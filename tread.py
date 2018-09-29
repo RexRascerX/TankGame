@@ -22,7 +22,7 @@ class wheels(locomotion):
 
 # Slightly advanced mode of transportation.
 # Slow, but well armored.
-class track(locomation):
+class track(locomotion):
   def __init__(self, level):
     super().__init__(1*level, 2*level, 6*level, 4*level)
   def __str__(self):

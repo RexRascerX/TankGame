@@ -1,6 +1,6 @@
 #Initialization stuff
-import sys,pygame,imaging.py,copy
-import tank.py
+import sys,pygame,imaging,copy
+import tank,tread,chassis,turrets
 pygame.init()
 scr=pygame.display.set_mode((640,480))
 bg=pygame.Surface(scr.get_size())
@@ -61,7 +61,7 @@ def render():
  print("rendered")
 
 #Adding Tank to test
-Tester = tank(wheels(0), lightChassis(0))
+Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0))
 
 while mainloop:
  milliseconds = clk.tick()
