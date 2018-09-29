@@ -21,7 +21,7 @@ class eventOV:
     else
       return -1
   def empty():
-    return queue.count() == 0
+    return len(queue) == 0
   def end():
     return exit
 
