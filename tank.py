@@ -13,30 +13,30 @@ class tank:
     self.secondaries = []
   def __str__(self):
     return "Tank"
-  def addPrimary(turret):
+  def addPrimary(self, turret):
     if (self.primaries.count() < self.chassis.primary):
       self.primaries.append(turret)
     else:
       print("Denied Primary " + turret)
-  def addSecondary(turret):
+  def addSecondary(self, turret):
     if (self.secondaries.count() < self.chassis.secondary):
       self.secondaries.append(turret)
     else:
       print("Denied Secondary " + turret)
   def getPowerTotal():
-    powerTotal = chassis.energyCapacity
-    for x in primaries:
+    self.powerTotal = chassis.energyCapacity
+    for x in self.primaries:
       if x.type() == 1:
         if x.energy() != -1:
-          powerTotal += x.energy()
-    for x in secondaries:
+          self.powerTotal += x.energy()
+    for x in self.secondaries:
       if x.type() == 1:
         if x.energy() != -1:
-          powerTotal += x.energy()
-    powerLevel = powerTotal
-  def getPowerLevel():
-    if powerTotal == -1:
-      getPowerTotal()
-    return powerTotal
+          self.powerTotal += x.energy()
+    self.powerLevel = self.powerTotal
+  def getPowerLevel(self):
+    if self.powerTotal == -1:
+      self.getPowerTotal()
+    return self.powerTotal
   def render(self):
     return imaging.rImage(100,100,0,imaging.rRect(12,12,0xFFFFFF))
