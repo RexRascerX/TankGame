@@ -1,3 +1,6 @@
+# This file is for tank bits and bobs
+import imaging, pygame
+
 class turret:
     def __init__(self, sightLength, turningSpeed, energyConsumption, armorBonus):
         self.sightLength = sightLength
@@ -10,6 +13,8 @@ class turret:
         -self.energyConsumption
     def type(self):
         return 0;
+    def render(self):
+      pass
 
 class passiveTurret(turret):
     def __init__(self, sightLength, turningSpeed, energyConsumption, armorBonus):
@@ -22,6 +27,8 @@ class passiveTurret(turret):
       pass
     def matter(self):
       pass
+    def render(self):
+      pass
 
 class aggressiveTurret(turret):
     def __init__(self, sightLength, turningSpeed, energyConsumption, armorBonus):
@@ -30,6 +37,8 @@ class aggressiveTurret(turret):
         return "Aggressive Turret"
     def type(self):
         return -1;
+    def render(self):
+      pass
 
 class matter(aggressiveTurret):
     def __init__(self, sightLength, turningSpeed, energyConsumption, armorBonus, matterStorage):
@@ -37,18 +46,24 @@ class matter(aggressiveTurret):
         super().__init__(sightLength, turningSpeed, energyConsumption, armorBonus)
     def __str__(self):
         return "Matter based turret"
+    def render(self):
+      pass
         
 class energy(aggressiveTurret):
     def __init__(self, sightLength, turningSpeed, energyConsumption, armorBonus):
         super().__init__(sightLength, turningSpeed, energyConsumption, armorBonus)
     def __str__(self):
         return "Energy based turret"
+    def render(self):
+      pass
 
 class GaussRifle(matter):
     def __init__(self, level):
         super().__init__(10+level, 2, 1+(level/3), 3, 3)
     def __str__(self):
         return "Gauss Rifle"
+    def render(self):
+      
 
 class Type67(matter):
     def __init__(self, level):
