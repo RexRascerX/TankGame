@@ -50,14 +50,18 @@ class tank:
     return self.powerTotal
 
   def tick(self, num):
-    self.a += 1
+    #self.a += 1
+    self.x += 1
 
 #Shows stuff.
   def render(self):
+    length = self.chassis.length
+    width = self.chassis.width + self.locomotion.width * 2
     toren = []
-    for x in self.locomotion.render(self.x,self.y,self.a,self.chassis.width,self.chassis.length):
-      toren.append(x)
-    toren.append(self.chassis.render(self.x,self.y,self.a))
+    toren.append(imaging.rImage(self.x,self.y,self.a,imaging.rRect(length,width,0x000000)))
+    for x in range(self.locomotion.numRen()): 
+      toren[0].addrect(x%2,x//2,0,self.locomotion.render())
+    toren[0].addrect(self.locomotion.width,0,0,self.chassis.render())
     for x in self.secondaries:
       toren.append(x.render(self.x,self.y,self.secondaryAs[x]))
     for x in self.primaries:

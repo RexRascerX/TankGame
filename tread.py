@@ -22,16 +22,10 @@ class wheels(locomotion):
     self.width = 8
   def __str__(self):
     return "Wheel"
-  def render(self, x, y, a, width, length):
-    x1 = x + numpy.cos(a) * x  
-    y1 = y - numpy.sin(a) * y
-    x2 = x + numpy.sin(a) * x
-    y2 = y + numpy.cos(a) * y
-    toren = [imaging.rImage(x1,y1,a,imaging.rRect(self.length,self.width,0xBBA1BB))]
-    toren.append(imaging.rImage(x2,y1,a,imaging.rRect(self.length,self.width,0xA1BBBB)))
-    toren.append(imaging.rImage(x1,y2,a,imaging.rRect(self.length,self.width,0xBBBBA1)))
-    toren.append(imaging.rImage(x2,y2,a,imaging.rRect(self.length,self.width,0xA1A1A1)))
-    return toren
+  def numRen(self):
+    return 4
+  def render(self):
+    return imaging.rRect(self.length, self.width, 0x555555)
 
 # Slightly advanced mode of transportation.
 # Slow, but well armored.
