@@ -15,7 +15,7 @@ class rRect:
  def __init__(self,w,h,c):
   self.serf=pygame.Surface((w,h))
   self.serf.fill(0xFFFFFF)
-  self.serf.fill(0x00FF00,pygame.Rect(2,2,w-4,h-4))
+  self.serf.fill(0x0,pygame.Rect(2,2,w-4,h-4))
   
  def draw(self,target,x,y,angle):
   赤=copy.copy(self.serf)

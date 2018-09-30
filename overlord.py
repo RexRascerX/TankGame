@@ -31,7 +31,6 @@ eq=[]
 def btick(eq):
  print(eq)
  for エ in eq:
-   print(エ)
    エ.tick(1)
    trq=エ.render()
    for t in trq:
@@ -43,7 +42,6 @@ def ctick(eq):
 
 # The structural loops
 def tick(gmode,eq):
- print(gmode)
  if(gmode==0):
   ttick(eq)
  elif(gmode==2):
