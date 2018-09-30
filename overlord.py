@@ -7,7 +7,7 @@ import eventHandler
 
 pygame.init()
 pygame.mixer.music.load("Doomsday.wav")
-pygame.mixer.music.play(-1,0)
+#pygame.mixer.music.play(-1,0)
 
 scr=pygame.display.set_mode((640,480))
 clk = pygame.time.Clock()
