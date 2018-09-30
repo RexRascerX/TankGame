@@ -14,7 +14,7 @@ class rImage:
  def render(self,frame):
   赤=copy.copy(self.serf)
   pygame.transform.rotate(赤,self.a)
-  frame.blit(赤,(x,y))
+  frame.blit(赤,(self.x,self.y))
 
 #Polygons in need of rendering
 class rRect:
