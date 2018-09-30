@@ -16,7 +16,7 @@ class chassis:
     pass
   def width(self):
     pass
-  def render(self, x,y,a):
+  def render(self):
     pass
 
 # Please make types below or use them.
