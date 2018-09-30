@@ -79,6 +79,7 @@ eveHan = eventHandler.eventOV()
 
 while mainloop:
  eveHan.check()
+ mainloop = !eveHan.exit()
  tick()
  render(scr)
  #Update Pygame display.
