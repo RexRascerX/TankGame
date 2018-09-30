@@ -2,9 +2,8 @@ import pygame, sys
 
 class eventOV:
     queue = []
-    pg = None
     exit = False
-  def __init__(self, pygame):
+  def __init__(self):
     pg = pygame
   def __str__(self):
     return "Why? Just why have you done this? Are you happy now?"
@@ -16,6 +15,7 @@ class eventOV:
         queue.append(event.key)
       if event.type == pygame.KEYUP:
         queue.remove(event.key)
+    print(queue)
   def noKeys():
     return len(queue) == 0
   def end():
