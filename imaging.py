@@ -7,6 +7,10 @@ class rImage:
   self.y=y#y coord
   self.a=a#angle
   self.serf=rect.serf#sprite
+ def addrect(self,x,y,a,rect):
+  赤=copy.copy(rect.serf)
+  pygame.transform.rotate(赤,angle)
+  self.serf.blit(赤,(x,y))
  def addsurf(self,x,y,a,surf):
   赤=copy.copy(surf)
   pygame.transform.rotate(赤,angle)
