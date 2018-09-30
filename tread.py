@@ -17,7 +17,7 @@ class locomotion:
 # Fast, but not strong.
 class wheels(locomotion):
   def __init__(self, level):
-    super().__init__(10*level, 1*level, 2*level, (2+level))
+    super().__init__(10*level, 1*level, 2*level, (1+level))
     self.length = 14
     self.width = 8
   def __str__(self):

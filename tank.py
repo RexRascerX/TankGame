@@ -54,11 +54,11 @@ class tank:
 
   def tick(self, num):
     if tank.eve.queue.count(pygame.K_UP) > 0:
-      self.y += 1 * numpy.sin(self.a)
-      self.x += 1 * numpy.cos(self.a)
+      self.y += 1 * numpy.sin(-self.a/180*numpy.pi)
+      self.x += 1 * numpy.cos(-self.a/180*numpy.pi)
     if tank.eve.queue.count(pygame.K_DOWN) > 0:
-      self.y -= 1 * numpy.sin(self.a)
-      self.x -= 1 * numpy.cos(self.a)
+      self.y -= 1 * numpy.sin(-self.a/180*numpy.pi)
+      self.x -= 1 * numpy.cos(-self.a/180*numpy.pi)
     if tank.eve.queue.count(pygame.K_LEFT) > 0:
       self.a -= self.locomotion.turnSpeed
     if tank.eve.queue.count(pygame.K_RIGHT) > 0:

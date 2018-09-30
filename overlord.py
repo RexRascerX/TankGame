@@ -21,6 +21,7 @@ gmode=2
 
 #Graphics fun stuff
 rq=[]
+FPS=60
 
 #Note that the default facing angle is to the right-hand edge of the screen (-->) and that rotations are counterclockwise when positive and clockwise when negative
 
@@ -79,6 +80,7 @@ eq.append(Tester)
 eveHan = eventHandler.eventOV()
 
 while mainloop:
+ milliseconds = clk.tick(FPS)
  eveHan.check()
  mainloop = not eveHan.exit
  tick(gmode,eq)
