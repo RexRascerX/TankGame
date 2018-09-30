@@ -29,12 +29,10 @@ def ltick(eq):
 eq=[]
  
 def btick(eq):
- print(eq)
  for エ in eq:
    エ.tick(1)
    trq=エ.render()
    for t in trq:
-    print(t)
     rq.append(t)
  
 def ctick(eq):
