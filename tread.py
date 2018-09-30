@@ -10,7 +10,7 @@ class locomotion:
     self.turnSpeed = turnSpeed
   def __str__(self):
     return "Locomotion"
-  def render(self, x, y, a):
+  def render(self):
     pass
 
 # Basic mode of transportaion.
@@ -34,7 +34,6 @@ class track(locomotion):
     super().__init__(1*level, 2*level, 6*level, 4*level)
   def __str__(self):
     return "Track"
-  def render(self, x, y, a, shiftx, shifty):
-    toren = [imaging.rImage(x+shiftx,y+shifty,a,imaging.rRect(8,14,0x111111))]
-    toren.append(imaging.rImage(x-shiftx,y-shiftx,a,imaging.rRect(8,14,0x111111)))
-    return toren
+  def render(self):
+    return imaging.rRect(self.length, self.width, 0x555555)
+
