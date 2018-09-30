@@ -20,6 +20,7 @@ class tank:
     self.a = xya[2]
     self.primaryAs = {}
     self.secondaryAs = {}
+    self.dead=False
   def __str__(self):
     return "Tank"
 #Needs to be run if you want weapons
@@ -63,8 +64,10 @@ class tank:
       self.x -= 1 * numpy.cos(-self.a/180*numpy.pi)
     if tank.eve.queue.count(pygame.K_LEFT) > 0:
       self.a += self.locomotion.turnSpeed
+      self.primaryAs[self.primaries[0]] += self.locomotion.turnSpeed
     if tank.eve.queue.count(pygame.K_RIGHT) > 0:
       self.a -= self.locomotion.turnSpeed
+      self.primaryAs[self.primaries[0]] -= self.locomotion.turnSpeed
     if len(self.primaries) > 0:
         if tank.eve.queue.count(pygame.K_d) > 0:
             self.primaryAs[self.primaries[0]] -= self.primaries[0].turningSpeed
@@ -76,13 +79,15 @@ class tank:
 
 #Shows stuff.
   def render(self):
+    if(self.dead):
+     return []
     length = self.chassis.length
     width = self.chassis.width + self.locomotion.width * 2
     toren = []
     toren.append(imaging.rImage(self.x,self.y,self.a,imaging.rRect(length,width,0x000000)))
 	
     for x in range(self.locomotion.numRen()): 
-      toren[0].addrect((x%2)*(self.chassis.length-self.locomotion.length),(x//2)*(self.chassis.width+self.locomotion.width),0,self.locomotion.render())
+      toren[0].addrect((x%2)*(self.chassis.length-self.locomotion.length-4),(x//2)*(self.chassis.width+self.locomotion.width),0,self.locomotion.render())
     toren[0].addrect(0,self.locomotion.width,0,self.chassis.render())
     for x in self.secondaries:
       toren[0].addrect(length/2,width/2,0,x.secondaryRender())

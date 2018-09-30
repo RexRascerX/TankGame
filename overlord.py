@@ -1,7 +1,7 @@
 #This is Jonathan's code almost exclusively. Any and all insanity contained within is likely his responsibility.
 
 #Initialization stuff
-import sys,pygame,imaging,copy
+import sys,pygame,imaging,copy,numpy
 import tank,tread,chassis,turrets
 import eventHandler
 
@@ -35,11 +35,16 @@ eq=[]
 def btick(eq):
  for エ in eq:
    エ.tick(1)
-   if((eq[0].x-エ.x)*(eq[0].x-エ.x)+(eq[0].y-エ.y)*(eq[0].y-エ.y)<10000):
+   if(エ!=Chester):
+    if((eq[0].x-エ.x)*(eq[0].x-エ.x)+(eq[0].y-エ.y)*(eq[0].y-エ.y)<10000):
+     trq=エ.render()
+     for t in trq:
+      rq.append(t)
+   else:
     trq=エ.render()
-   for t in trq:
-    rq.append(t)
- 
+    for t in trq:
+     rq.append(t)
+
 def ctick(eq):
  print("customization")
 
@@ -79,7 +84,7 @@ Chester.addPrimary(turrets.BigBertha(0))
 eq.append(Chester)
 Howard = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(599,29,0),False)
 eq.append(Howard)
-William = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(571,401,0),False)
+William = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(371,241,0),False)
 eq.append(William)
 George = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(59,380,0),False)
 eq.append(George)
