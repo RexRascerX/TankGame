@@ -78,6 +78,7 @@ class tank:
     width = self.chassis.width + self.locomotion.width * 2
     toren = []
     toren.append(imaging.rImage(self.x,self.y,self.a,imaging.rRect(length,width,0x000000)))
+	
     for x in range(self.locomotion.numRen()): 
       toren[0].addrect((x%2)*(self.chassis.length-self.locomotion.length),(x//2)*(self.chassis.width+self.locomotion.width),0,self.locomotion.render())
     toren[0].addrect(0,self.locomotion.width,0,self.chassis.render())

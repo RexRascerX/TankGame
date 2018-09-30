@@ -16,8 +16,9 @@ class rImage:
   pygame.transform.rotate(赤,a)
   self.serf.blit(赤,(x,y))
  def render(self,frame):
-  赤=copy.copy(self.serf)
-  pygame.transform.rotate(赤,self.a)
+  print("a="+str(self.a))
+  赤=pygame.Surface.convert_alpha(self.serf)
+  赤=pygame.transform.rotate(赤,self.a)
   frame.blit(赤,(self.x,self.y))
 
 #Polygons in need of rendering
@@ -28,6 +29,5 @@ class rRect:
   self.serf.fill(0x0,pygame.Rect(2,2,w-4,h-4))
   
  def draw(self,target,x,y,angle):
-  赤=copy.copy(self.serf)
-  pygame.transform.rotate(赤,angle)
+  赤=pygame.transform.rotate(self.serf,angle)
   target.blit(赤,(x,y))
