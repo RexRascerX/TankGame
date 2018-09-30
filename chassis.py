@@ -9,6 +9,8 @@ class chassis:
     self.armorBonus = armorBonus
     self.energyCapacity = energyCapacity
     self.chargeRate = chargeRate
+    self.length = 0
+    self.width = 0
   def __str__(self):
     return "Chassis"
   def length(self):
