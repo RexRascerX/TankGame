@@ -50,8 +50,8 @@ class tank:
     return self.powerTotal
 
   def tick(self, num):
-    #self.a += 1
-    self.x += 1
+    self.a += 1
+    #self.x += 1
 
 #Shows stuff.
   def render(self):
