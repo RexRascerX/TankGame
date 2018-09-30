@@ -72,7 +72,8 @@ def render(gmode,scr,rq):
   brender(scr,rq)
 
 #Adding Tank to test
-Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0),(20,20,0))
+Tester = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(20,20,0))
+Tester.addPrimary(turrets.BigBertha(0))
 eq.append(Tester)
 
 eveHan = eventHandler.eventOV()
