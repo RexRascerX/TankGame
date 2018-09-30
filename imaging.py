@@ -13,7 +13,7 @@ class rImage:
   self.serf.blit(赤,(x,y))
  def render(self,frame):
   赤=copy.copy(self.serf)
-  rotate(赤,self.a)
+  pygame.transform.rotate(赤,self.a)
   frame.blit(赤,(x,y))
 
 #Polygons in need of rendering
