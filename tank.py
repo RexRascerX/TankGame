@@ -60,7 +60,7 @@ class tank:
       self.x -= 1
     if tank.eve.queue.count(pygame.K_RIGHT) > 0:
       self.x += 1
-    if length(self.primaries) > 0:
+    if len(self.primaries) > 0:
         if tank.eve.queue.count(pygame.K_d) > 0:
             self.primaryAs[self.primaries[0]] += self.primaries[0].turningSpeed
         if tank.eve.queue.count(pygame.K_a) > 0:
