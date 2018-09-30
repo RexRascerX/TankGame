@@ -14,45 +14,49 @@ playtime=0
 
 #Game status stuff
 gmodes=["title","lselect","match","customize"]
-gmode=0
+gmode=2
 
 #Graphics fun stuff
 rq=[]
 
 #Note that the default facing angle is to the right-hand edge of the screen (-->) and that rotations are counterclockwise when positive and clockwise when negative
 
-def ttick():
-    return None;
-def ltick():
-   return None; 
+def ttick(eq):
+ return None;
+def ltick(eq):
+ return None; 
 #Battle mode stuff
 eq=[]
  
-def btick():
+def btick(eq):
+ print(eq)
  for エ in eq:
+   print(エ)
    エ.tick(1)
    trq=エ.render()
    for t in trq:
+    print(t)
     rq.append(t)
  
-def ctick():
+def ctick(eq):
  print("customization")
 
-gticks=[ttick(),ltick(),btick(),ctick()]
-
 # The structural loops
-def tick():
- gticks[gmode]
- 
-def trender():
+def tick(gmode,eq):
+ print(gmode)
+ if(gmode==0):
+  ttick(eq)
+ elif(gmode==2):
+  btick(eq)
+
+def trender(scr,rq):
  bg=pygame.Surface(scr.get_size())
- bg.fill(0x0)
- 
+ bg.fill(0x00FF00)
  bg=bg.convert()
  scr.blit(bg,(0,0))
  pygame.display.flip()
  
-def brender(scr):
+def brender(scr,rq):
  bg=pygame.Surface(scr.get_size())
  bg.fill(0x0)
  for ロ in rq:
@@ -62,25 +66,21 @@ def brender(scr):
  pygame.display.flip()
  rq=[]
  
-def render(scr):
- if(gmode==gmodes[0]):
-  ttick()
- if(gmode==gmodes[1]):
-  ltick()
- if(gmode==gmodes[2]):
-  brender()
- if(gmode==gmodes[3]):
-  ctick()
+def render(gmode,scr,rq):
+ if(gmode==0):
+  trender(scr,rq)
+ elif(gmode==2):
+  brender(scr,rq)
 
 #Adding Tank to test
-Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0),(20,20,20))
-rq.append(Tester.render())
+Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0),(20,20,0))
+eq.append(Tester)
 
 eveHan = eventHandler.eventOV()
 
 while mainloop:
  eveHan.check()
  mainloop = not eveHan.exit
- tick()
- render(scr)
+ tick(gmode,eq)
+ render(gmode,scr,rq)
  #Update Pygame display.
