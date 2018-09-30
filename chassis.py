@@ -59,6 +59,6 @@ class heavyChassis(chassis):
     return self.length
   def width(self):
     return self.width
-   def render(self):
+  def render(self):
     return imaging.rRect(self.length,self.width,0xFFFFFF)
 
