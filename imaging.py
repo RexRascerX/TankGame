@@ -17,7 +17,8 @@ class rImage:
   self.serf.blit(赤,(x,y))
  def render(self,frame):
   print("a="+str(self.a))
-  赤=pygame.transform.rotate(self.serf,self.a)
+  赤=pygame.Surface.convert_alpha(self.serf)
+  赤=pygame.transform.rotate(赤,self.a)
   frame.blit(赤,(self.x,self.y))
 
 #Polygons in need of rendering
