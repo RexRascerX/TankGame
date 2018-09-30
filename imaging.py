@@ -14,7 +14,7 @@ class rImage:
 class rRect:
  def __init__(self,w,h,c):
   self.serf=pygame.Surface((w,h))
-  self.serf.fill(0xFFFFFF)
+  self.serf.fill(c)
   self.serf.fill(0x0,pygame.Rect(2,2,w-4,h-4))
   
  def draw(self,target,x,y,angle):
