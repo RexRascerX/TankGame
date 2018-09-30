@@ -16,9 +16,9 @@ class eventOV:
       if event.type == pygame.KEYUP:
         eventOV.queue.remove(event.key)
     print(eventOV.queue)
-  def noKeys():
-    return len(queue) == 0
-  def end():
+  def noKeys(self):
+    return len(eventOV.queue) == 0
+  def end(self):
     return exit
 
 
