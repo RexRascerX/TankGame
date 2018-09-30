@@ -15,7 +15,7 @@ class eventOV:
         eventOV.queue.append(event.key)
       if event.type == pygame.KEYUP:
         eventOV.queue.remove(event.key)
-    print(eventOV.queue)
+   # print(eventOV.queue)
   def noKeys(self):
     return len(eventOV.queue) == 0
   def end(self):
