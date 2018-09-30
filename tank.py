@@ -49,7 +49,7 @@ class tank:
     toren = []
     for x in locomotion.render(self.x,self.y,self.a,chassis.width()/2,chassis.hight()/2):
       toren.append(x)
-    toren.append(chassis.render(self.x,self.y,self.a)
+    toren.append(chassis.render(self.x,self.y,self.a))
     for x in self.secondaries:
       toren.append(x.render(self.x,self.y,self.secondaryAs[x]))
     for x in self.primaries:

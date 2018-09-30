@@ -28,9 +28,9 @@ eq=[]
  
 def btick():
  for エ in eq:
-   #trq=エ.render()
-   #for t in trq:
-   rq.append(エ.render())
+   trq=エ.render()
+   for t in trq:
+    rq.append(t)
  print("in battle")
  
 def ctick():
@@ -46,20 +46,36 @@ def tick():
   btick()
  if(gmode==gmodes[3]):
   ctick()
- print("ticking")
  
-def render(scr):
+def trender():
  bg=pygame.Surface(scr.get_size())
  bg.fill(0x0)
- #btick()
+ 
+ bg=bg.convert()
+ scr.blit(bg,(0,0))
+ pygame.display.flip()
+ 
+def brender(scr):
+ bg=pygame.Surface(scr.get_size())
+ bg.fill(0x0)
  for ロ in rq:
   ロ.render(bg)
  bg=bg.convert()
  scr.blit(bg,(0,0))
  pygame.display.flip()
+ 
+def render(scr):
+ if(gmode==gmodes[0]):
+  ttick()
+ if(gmode==gmodes[1]):
+  ltick()
+ if(gmode==gmodes[2]):
+  brender()
+ if(gmode==gmodes[3]):
+  ctick()
 
 #Adding Tank to test
-Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0))
+Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0),(20,20,20))
 rq.append(Tester.render())
 
 while mainloop:
