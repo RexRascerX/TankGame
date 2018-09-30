@@ -6,13 +6,15 @@ class eventOV:
     self.queue = []
     self.exit = False
   def __str__(self):
-    return "Why? Just why have you done this?"
+    return "Why? Just why have you done this? Are you happy now?"
   def check():
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
         exit = True
       if event.type == pygame.KEYDOWN:
         queue.append(event.key)
+      if event.type == pygame.KEYUP:
+        queue.remove(event.key)
   def next():
     if queue.count() > 0:
       temp = queue[0]
