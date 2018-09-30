@@ -50,12 +50,12 @@ class tank:
     return self.powerTotal
 
   def tick(self, num):
-    return None
+    self.a += 1
 
 #Shows stuff.
   def render(self):
     toren = []
-    for x in self.locomotion.render(self.x,self.y,self.a,self.chassis.width/2,self.chassis.length/2):
+    for x in self.locomotion.render(self.x,self.y,self.a,self.chassis.width,self.chassis.length):
       toren.append(x)
     toren.append(self.chassis.render(self.x,self.y,self.a))
     for x in self.secondaries:
