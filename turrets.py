@@ -78,7 +78,7 @@ class Type67(matter):
     def primaryRender(self, x, y, a):
         return imaging.rImage(x,y,a,imaging.rRect(self.length,self.width,0x10ff10))
     def secondaryRender(self):
-        return imaging.rRect(self.length,self.width,0xFFFFFF)r
+        return imaging.rRect(self.length,self.width,0xFFFFFF)
         
 class BigBertha(matter):
     def __init__(self, level):
