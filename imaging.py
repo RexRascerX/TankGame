@@ -6,9 +6,15 @@ class rImage:
   self.x=x#x coord
   self.y=y#y coord
   self.a=a#angle
-  self.rect=rect#sprite
+  self.serf=rect.serf#sprite
+ def addsurf(self,x,y,a,surf):
+  赤=copy.copy(surf)
+  pygame.transform.rotate(赤,angle)
+  self.serf.blit(赤,(x,y))
  def render(self,frame):
-  self.rect.draw(frame,self.x,self.y,self.a)
+  赤=copy.copy(self.serf)
+  rotate(赤,self.a)
+  frame.blit(赤,(x,y))
 
 #Polygons in need of rendering
 class rRect:
