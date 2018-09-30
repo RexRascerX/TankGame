@@ -3,6 +3,8 @@
 #Initialization stuff
 import sys,pygame,imaging,copy
 import tank,tread,chassis,turrets
+import eventHandler
+
 pygame.init()
 scr=pygame.display.set_mode((640,480))
 clk = pygame.time.Clock()
@@ -20,9 +22,9 @@ rq=[]
 #Note that the default facing angle is to the right-hand edge of the screen (-->) and that rotations are counterclockwise when positive and clockwise when negative
 
 def ttick():
- 
+    return None;
 def ltick():
- 
+   return None; 
 #Battle mode stuff
 eq=[]
  
@@ -74,8 +76,10 @@ def render(scr):
 Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0),(20,20,20))
 rq.append(Tester.render())
 
+eveHan = eventHandler.eventOV()
+
 while mainloop:
- # Do event handling here
+ eveHan.check()
  tick()
  render(scr)
  #Update Pygame display.

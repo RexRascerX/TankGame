@@ -18,6 +18,7 @@ class tank:
     self.secondaryAs = {}
   def __str__(self):
     return "Tank"
+#Needs to be run if you want weapons
   def addPrimary(self, turret):
     if (self.primaries.count() < self.chassis.primary):
       self.primaries.append(turret)
@@ -30,7 +31,9 @@ class tank:
       self.secondaryAs.update(turret,self.a)
     else:
       print("Denied Secondary " + turret)
-  def getPowerTotal():
+
+#This calculates basic stats
+  def getPowerTotal(self):
     self.powerTotal = chassis.energyCapacity
     for x in self.primaries:
       if x.type() == 1:
@@ -45,11 +48,16 @@ class tank:
     if self.powerTotal == -1:
       self.getPowerTotal()
     return self.powerTotal
+
+  def tick(self, num):
+    return None
+
+#Shows stuff.
   def render(self):
     toren = []
-    for x in locomotion.render(self.x,self.y,self.a,chassis.width()/2,chassis.hight()/2):
+    for x in self.locomotion.render(self.x,self.y,self.a,self.chassis.width/2,self.chassis.length/2):
       toren.append(x)
-    toren.append(chassis.render(self.x,self.y,self.a))
+    toren.append(self.chassis.render(self.x,self.y,self.a))
     for x in self.secondaries:
       toren.append(x.render(self.x,self.y,self.secondaryAs[x]))
     for x in self.primaries:
