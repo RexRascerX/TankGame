@@ -60,6 +60,7 @@ def brender(scr):
  bg=bg.convert()
  scr.blit(bg,(0,0))
  pygame.display.flip()
+ rq=[]
  
 def render(scr):
  if(gmode==gmodes[0]):
