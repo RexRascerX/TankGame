@@ -1,8 +1,8 @@
 import pygame, sys
 
 class eventOV:
-    queue = []
-    exit = False
+  queue = []
+  exit = False
   def __init__(self):
     pg = pygame
   def __str__(self):
