@@ -20,9 +20,9 @@ rq=[]
 #Note that the default facing angle is to the right-hand edge of the screen (-->) and that rotations are counterclockwise when positive and clockwise when negative
 
 def ttick():
- 
+    return None;
 def ltick():
- 
+   return None; 
 #Battle mode stuff
 eq=[]
  
