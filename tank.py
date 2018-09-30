@@ -1,9 +1,11 @@
 # The thing you make when a tank apears
 import tread, chassis, turrets
-import imaging
+import imaging, eventHandler
+import pygame
 
 # User defined tanks
 class tank:
+  eve = eventHandler.eventOV() 
   def __init__(self,locomotion, chassis, xya):
     self.locomotion = locomotion
     self.chassis = chassis
@@ -50,7 +52,15 @@ class tank:
     return self.powerTotal
 
   def tick(self, num):
-    self.a += 1
+    if tank.eve.queue.count(pygame.K_UP) > 0:
+      self.y -= 1
+    if tank.eve.queue.count(pygame.K_DOWN) > 0:
+      self.y += 1
+    if tank.eve.queue.count(pygame.K_LEFT) > 0:
+      self.x -= 1
+    if tank.eve.queue.count(pygame.K_RIGHT) > 0:
+      self.x += 1
+    #self.a += 1
     #self.x += 1
 
 #Shows stuff.
@@ -60,8 +70,8 @@ class tank:
     toren = []
     toren.append(imaging.rImage(self.x,self.y,self.a,imaging.rRect(length,width,0x000000)))
     for x in range(self.locomotion.numRen()): 
-      toren[0].addrect(x%2,x//2,0,self.locomotion.render())
-    toren[0].addrect(self.locomotion.width,0,0,self.chassis.render())
+      toren[0].addrect((x%2)*(self.chassis.length-self.locomotion.length),(x//2)*(self.chassis.width+self.locomotion.width),0,self.locomotion.render())
+    toren[0].addrect(0,self.locomotion.width,0,self.chassis.render())
     for x in self.secondaries:
       toren.append(x.render(self.x,self.y,self.secondaryAs[x]))
     for x in self.primaries:
