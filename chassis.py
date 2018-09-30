@@ -11,6 +11,10 @@ class chassis:
     self.chargeRate = chargeRate
   def __str__(self):
     return "Chassis"
+  def length(self):
+    pass
+  def width(self):
+    pass
   def render(self, x,y,a):
     pass
 
@@ -18,30 +22,42 @@ class chassis:
 class lightChassis(chassis):
   def __init__(self, level):
     super().__init__((level//3),(2+level)//2, level, 7*(level+1), level)
+    self.length = 30
+    self.width = 24
   def __str__(self):
     return "Light Chassis"
   def length(self):
-    return 30
+    return self.length
+  def width(self):
+    return self.width
   def render(self, x,y,a):
-    return imaging.rImage(x,y,a,imaging.rRect(24,30,0xFFFFFF))
+    return imaging.rImage(x,y,a,imaging.rRect(self.width,self.length,0xFFFFFF))
 
 class mediumChassis(chassis):
   def __init__(self, level):
     super().__init__((level+5)//5,(level+6)//3,(2*level)+4,(10*level)+10, level+1)
+    self.length = 38
+    self.width = 28
   def __str__(self):
     return "Medium Chassis"
   def length(self):
-    return 38
+    return self.length
+  def width(self):
+    return self.width
   def render(self, x,y,a):
-    return imaging.rImage(x,y,a,imaging.rRect(28,38,0xFFFFFF))
+    return imaging.rImage(x,y,a,imaging.rRect(self.width,self.length,0xFFFFFF))
 
 class heavyChassis(chassis):
   def __init__(self, level):
     super().__init__((level+3)//3,(level+4)//2,(3*level)+5,(13*level)+13,level+2)
+    self.length = 38
+    self.width = 28
   def __str__(self):
     return "Heavy Chassis"
   def length(self):
-    return 46
+    return self.length
+  def width(self):
+    return self.width
   def render(self, x,y,a):
-    return imaging.rImage(x,y,a,imaging.rRect(32,46,0xFFFFFF))
+    return imaging.rImage(x,y,a,imaging.rRect(self.width,self.length,0xFFFFFF))
 
