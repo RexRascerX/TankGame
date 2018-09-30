@@ -32,7 +32,7 @@ class lightChassis(chassis):
   def width(self):
     return self.width
   def render(self, x,y,a):
-    return imaging.rImage(x,y,a,imaging.rRect(self.width,self.length,0xFFFFFF))
+    return imaging.rImage(x,y,a,imaging.rRect(self.length,self.width,0xFFFFFF))
 
 class mediumChassis(chassis):
   def __init__(self, level):
@@ -46,7 +46,7 @@ class mediumChassis(chassis):
   def width(self):
     return self.width
   def render(self, x,y,a):
-    return imaging.rImage(x,y,a,imaging.rRect(self.width,self.length,0xFFFFFF))
+    return imaging.rImage(x,y,a,imaging.rRect(self.length,self.width,0xFFFFFF))
 
 class heavyChassis(chassis):
   def __init__(self, level):
@@ -60,5 +60,5 @@ class heavyChassis(chassis):
   def width(self):
     return self.width
   def render(self, x,y,a):
-    return imaging.rImage(x,y,a,imaging.rRect(self.width,self.length,0xFFFFFF))
+    return imaging.rImage(x,y,a,imaging.rRect(self.length,self.width,0xFFFFFF))
 

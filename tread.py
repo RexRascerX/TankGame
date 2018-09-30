@@ -27,10 +27,10 @@ class wheels(locomotion):
     y1 = y - numpy.sin(a) * y
     x2 = x + numpy.sin(a) * x
     y2 = y + numpy.cos(a) * y
-    toren = [imaging.rImage(x1,y1,a,imaging.rRect(self.width,self.length,0x111111))]
-    toren.append(imaging.rImage(x2,y1,a,imaging.rRect(self.width,self.length,0x111111)))
-    toren.append(imaging.rImage(x1,y2,a,imaging.rRect(self.width,self.length,0x111111)))
-    toren.append(imaging.rImage(x2,y2,a,imaging.rRect(self.width,self.length,0x111111)))
+    toren = [imaging.rImage(x1,y1,a,imaging.rRect(self.length,self.width,0xBBA1BB))]
+    toren.append(imaging.rImage(x2,y1,a,imaging.rRect(self.length,self.width,0xA1BBBB)))
+    toren.append(imaging.rImage(x1,y2,a,imaging.rRect(self.length,self.width,0xBBBBA1)))
+    toren.append(imaging.rImage(x2,y2,a,imaging.rRect(self.length,self.width,0xA1A1A1)))
     return toren
 
 # Slightly advanced mode of transportation.
