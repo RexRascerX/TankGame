@@ -2,6 +2,7 @@
 import tread, chassis, turrets
 import imaging, eventHandler
 import pygame
+import numpy
 
 # User defined tanks
 class tank:
@@ -53,13 +54,15 @@ class tank:
 
   def tick(self, num):
     if tank.eve.queue.count(pygame.K_UP) > 0:
-      self.y -= 1
+      self.y += 1 * numpy.sin(self.a)
+      self.x += 1 * numpy.cos(self.a)
     if tank.eve.queue.count(pygame.K_DOWN) > 0:
-      self.y += 1
+      self.y -= 1 * numpy.sin(self.a)
+      self.x -= 1 * numpy.cos(self.a)
     if tank.eve.queue.count(pygame.K_LEFT) > 0:
-      self.x -= 1
+      self.a -= self.locomotion.turnSpeed
     if tank.eve.queue.count(pygame.K_RIGHT) > 0:
-      self.x += 1
+      self.a += self.locomotion.turnSpeed
     if len(self.primaries) > 0:
         if tank.eve.queue.count(pygame.K_d) > 0:
             self.primaryAs[self.primaries[0]] += self.primaries[0].turningSpeed
