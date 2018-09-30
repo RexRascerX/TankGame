@@ -3,6 +3,8 @@
 #Initialization stuff
 import sys,pygame,imaging,copy
 import tank,tread,chassis,turrets
+import eventHandler
+
 pygame.init()
 scr=pygame.display.set_mode((640,480))
 clk = pygame.time.Clock()
