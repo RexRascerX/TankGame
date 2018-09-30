@@ -73,7 +73,7 @@ def render(scr):
 Tester = tank.tank(tread.wheels(0), chassis.lightChassis(0),(20,20,20))
 rq.append(Tester.render())
 
-eveHan = eventOV()
+eveHan = eventHandeling.eventOV()
 
 while mainloop:
  eveHan.check()
