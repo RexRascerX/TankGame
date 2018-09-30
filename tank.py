@@ -73,8 +73,8 @@ class tank:
       toren[0].addrect((x%2)*(self.chassis.length-self.locomotion.length),(x//2)*(self.chassis.width+self.locomotion.width),0,self.locomotion.render())
     toren[0].addrect(0,self.locomotion.width,0,self.chassis.render())
     for x in self.secondaries:
-      toren.append(x.render(self.x,self.y,self.secondaryAs[x]))
+      toren[0].addrect(length/2,width/2,0,x.secondaryRender())
     for x in self.primaries:
-      toren.append(x.render(self.x,self.y,self.primaryAs[x]))
+      toren.append(x.primaryRender(self.x+length/2,self.y+width/2,self.primaryAs[x]))
     return toren
 
