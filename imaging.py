@@ -9,11 +9,11 @@ class rImage:
   self.serf=rect.serf#sprite
  def addrect(self,x,y,a,rect):
   赤=copy.copy(rect.serf)
-  pygame.transform.rotate(赤,angle)
+  pygame.transform.rotate(赤,a)
   self.serf.blit(赤,(x,y))
  def addsurf(self,x,y,a,surf):
   赤=copy.copy(surf)
-  pygame.transform.rotate(赤,angle)
+  pygame.transform.rotate(赤,a)
   self.serf.blit(赤,(x,y))
  def render(self,frame):
   赤=copy.copy(self.serf)
