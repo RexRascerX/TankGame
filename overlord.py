@@ -35,7 +35,8 @@ eq=[]
 def btick(eq):
  for エ in eq:
    エ.tick(1)
-   trq=エ.render()
+   if((eq[0].x-エ.x)*(eq[0].x-エ.x)+(eq[0].y-エ.y)*(eq[0].y-エ.y)<10000):
+    trq=エ.render()
    for t in trq:
     rq.append(t)
  
@@ -73,9 +74,15 @@ def render(gmode,scr,rq):
   brender(scr,rq)
 
 #Adding Tank to test
-Tester = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(20,20,0))
-Tester.addPrimary(turrets.BigBertha(0))
-eq.append(Tester)
+Chester = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(20,20,0),True)
+Chester.addPrimary(turrets.BigBertha(0))
+eq.append(Chester)
+Howard = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(599,29,0),False)
+eq.append(Howard)
+William = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(571,401,0),False)
+eq.append(William)
+George = tank.tank(tread.wheels(0), chassis.mediumChassis(0),(59,380,0),False)
+eq.append(George)
 
 eveHan = eventHandler.eventOV()
 

@@ -7,7 +7,8 @@ import numpy
 # User defined tanks
 class tank:
   eve = eventHandler.eventOV() 
-  def __init__(self,locomotion, chassis, xya):
+  def __init__(self,locomotion, chassis, xya, pc):
+    self.pc=pc
     self.locomotion = locomotion
     self.chassis = chassis
     self.powerTotal = -1
@@ -52,7 +53,8 @@ class tank:
       self.getPowerTotal()
     return self.powerTotal
 
-  def tick(self, num):
+  def tick(self, time):
+   if self.pc:
     if tank.eve.queue.count(pygame.K_UP) > 0:
       self.y += 1 * numpy.sin(-self.a/180*numpy.pi)
       self.x += 1 * numpy.cos(-self.a/180*numpy.pi)
@@ -60,14 +62,14 @@ class tank:
       self.y -= 1 * numpy.sin(-self.a/180*numpy.pi)
       self.x -= 1 * numpy.cos(-self.a/180*numpy.pi)
     if tank.eve.queue.count(pygame.K_LEFT) > 0:
-      self.a -= self.locomotion.turnSpeed
-    if tank.eve.queue.count(pygame.K_RIGHT) > 0:
       self.a += self.locomotion.turnSpeed
+    if tank.eve.queue.count(pygame.K_RIGHT) > 0:
+      self.a -= self.locomotion.turnSpeed
     if len(self.primaries) > 0:
         if tank.eve.queue.count(pygame.K_d) > 0:
-            self.primaryAs[self.primaries[0]] += self.primaries[0].turningSpeed
-        if tank.eve.queue.count(pygame.K_a) > 0:
             self.primaryAs[self.primaries[0]] -= self.primaries[0].turningSpeed
+        if tank.eve.queue.count(pygame.K_a) > 0:
+            self.primaryAs[self.primaries[0]] += self.primaries[0].turningSpeed
 
     #self.a += 1
     #self.x += 1
