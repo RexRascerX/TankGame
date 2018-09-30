@@ -24,7 +24,7 @@ class tank:
   def addPrimary(self, turret):
     if len(self.primaries) < self.chassis.primary:
       self.primaries.append(turret)
-      self.primaryAs.update(turret,self.a)
+      self.primaryAs.update({turret:self.a})
     else:
       print("Denied Primary " + str(turret))
   def addSecondary(self, turret):
