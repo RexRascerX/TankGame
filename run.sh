@@ -1,1 +1,1 @@
-python overlord.py
+python3 overlord.py
