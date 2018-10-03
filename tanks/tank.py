@@ -1,6 +1,7 @@
 # The thing you make when a tank apears
-import tread, chassis, turrets
-import imaging, eventHandler
+from tanks import tread, chassis, turrets
+from draw import imaging 
+import eventHandler
 import pygame, numpy
 
 # User defined tanks

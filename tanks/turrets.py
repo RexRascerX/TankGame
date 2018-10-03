@@ -1,5 +1,6 @@
 # This file is for tank bits and bobs
-import imaging, pygame
+from draw import imaging
+import pygame
 
 class turret:
     def __init__(self, sightLength, turningSpeed, energyConsumption, armorBonus):

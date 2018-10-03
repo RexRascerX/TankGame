@@ -1,8 +1,12 @@
 #This is Jonathan's code almost exclusively. Any and all insanity contained within is likely his responsibility.
 
 #Initialization stuff
-import sys,pygame,imaging,copy,numpy
-import tank,tread,chassis,turrets
+import sys,pygame,copy,numpy
+import tanks.tank as tank
+import tanks.chassis as chassis
+import tanks.tread as tread
+import tanks.turrets as turrets
+import draw.imaging as imaging
 import eventHandler
 
 pygame.init()

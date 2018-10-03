@@ -1,4 +1,4 @@
-import imaging
+from draw import imaging
 # The center of the Tank
 
 # This is the inheritance version. Please do not use

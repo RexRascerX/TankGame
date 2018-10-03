@@ -1,4 +1,5 @@
-import imaging, numpy
+from draw import imaging
+import numpy
 # Class for transportation
 
 # This is the inheritance class, please make the types below this class.
