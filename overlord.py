@@ -7,7 +7,7 @@ import tanks.chassis as chassis
 import tanks.tread as tread
 import tanks.turrets as turrets
 import draw.imaging as imaging
-import eventHandler
+import events.keyboard as eventHandler
 
 pygame.init()
 pygame.mixer.music.load("Doomsday.wav")
