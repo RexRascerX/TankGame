@@ -98,3 +98,5 @@ while mainloop:
  tick(gmode,eq)
  render(gmode,scr,rq)
  #Update Pygame display.
+# The below line is to be IDLE friendly
+pygame.quit()
