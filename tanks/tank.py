@@ -1,5 +1,5 @@
 # The thing you make when a tank apears
-from tanks import tread, chassis, turrets
+from tanks.parts import tread, chassis, turrets
 from draw import imaging 
 import events.keyboard as eventHandler
 import pygame, numpy
