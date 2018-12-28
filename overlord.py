@@ -2,15 +2,15 @@
 
 #Initialization stuff
 import sys,pygame,copy,numpy
-import tanks.tank as tank
-import tanks.chassis as chassis
-import tanks.tread as tread
-import tanks.turrets as turrets
-import draw.imaging as imaging
-import events.keyboard as eventHandler
+from tanks import tank
+from tanks.parts import chassis
+from tanks.parts import tread
+from tanks.parts import turrets
+from draw import imaging
+from events import keyboard as eventHandler
 
 pygame.init()
-pygame.mixer.music.load("Doomsday.wav")
+#pygame.mixer.music.load("Doomsday.wav")
 #pygame.mixer.music.play(-1,0)
 
 scr=pygame.display.set_mode((640,480))
@@ -32,10 +32,10 @@ FPS=60
 def ttick(eq):
  return None;
 def ltick(eq):
- return None; 
+ return None;
 #Battle mode stuff
 eq=[]
- 
+
 def btick(eq):
  for エ in eq:
    エ.tick(1)
@@ -65,7 +65,7 @@ def trender(scr,rq):
  bg=bg.convert()
  scr.blit(bg,(0,0))
  pygame.display.flip()
- 
+
 def brender(scr,rq):
  bg=pygame.Surface(scr.get_size())
  bg.fill(0x0)
@@ -75,7 +75,7 @@ def brender(scr,rq):
  scr.blit(bg,(0,0))
  pygame.display.flip()
  rq.clear()
- 
+
 def render(gmode,scr,rq):
  if(gmode==0):
   trender(scr,rq)
